@@ -4,12 +4,40 @@ A hands-on project to learn SQL using Python, Jupyter notebooks, and SQLite.
 
 ## Setup
 
-1. Install the requirements:
+There are two ways to set up this project:
+
+### Option 1: Automated Setup (Recommended)
+
+1. Make the setup script executable:
+```bash
+chmod +x setup.sh
+```
+
+2. Run the setup script:
+```bash
+./setup.sh
+```
+
+This will:
+- Create a Python virtual environment
+- Install all dependencies
+- Set up VS Code configuration
+- Create necessary .gitignore rules
+
+### Option 2: Manual Setup
+
+1. Create and activate a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+2. Install the requirements:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Run the setup notebook:
+3. Run the setup notebook:
 ```bash
 jupyter notebook notebooks/00_setup_database.ipynb
 ```

@@ -64,6 +64,30 @@ Thumbs.db
 EOL
 fi
 
+# Install VS Code extensions
+echo "🔧 Installing VS Code extensions..."
+
+# Python and Jupyter support
+echo "📦 Installing Python and Jupyter extensions..."
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-python.vscode-pylance
+
+# SQL support
+echo "📦 Installing SQL extensions..."
+code --install-extension mtxr.sqltools
+code --install-extension mtxr.sqltools-driver-sqlite
+code --install-extension qwtel.sqlite-viewer
+code --install-extension alexcvzz.vscode-sqlite
+
+# Development tools
+echo "📦 Installing development tools..."
+code --install-extension eamodio.gitlens
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension christian-kohler.path-intellisense
+code --install-extension formulahendry.code-runner
+
 # Create VS Code settings if they don't exist
 if [ ! -d ".vscode" ]; then
     echo "⚙️  Creating VS Code settings..."
@@ -76,7 +100,17 @@ if [ ! -d ".vscode" ]; then
     "editor.formatOnSave": true,
     "python.formatting.provider": "black",
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "sqltools.connections": [
+        {
+            "name": "SQLite Database",
+            "driver": "SQLite",
+            "database": "./data/movies.db"
+        }
+    ],
+    "code-runner.executorMap": {
+        "python": "\${workspaceFolder}/venv/bin/python"
+    }
 }
 EOL
 fi
@@ -90,18 +124,24 @@ To start using the project:
 1. Make sure your virtual environment is activated:
    source venv/bin/activate
 
-2. Install VS Code extensions (recommended):
-   - Python (ms-python.python)
-   - Jupyter (ms-toolsai.jupyter)
-   - SQLite Viewer (qwtel.sqlite-viewer)
+2. The following VS Code extensions have been installed:
+   - Python and Jupyter support
+   - SQLite tools and viewers
+   - Git integration (GitLens)
+   - Markdown support
+   - Code spell checker
+   - Path intellisense
+   - Code runner
 
 3. Start with the first notebook:
    code notebooks/00_setup_database.ipynb
 
-4. If you're new to VS Code, here are some helpful keyboard shortcuts:
+4. Helpful keyboard shortcuts:
    - Cmd/Ctrl + Shift + P: Command palette
    - Cmd/Ctrl + P: Quick file open
    - Cmd/Ctrl + B: Toggle sidebar
+   - F1: Open SQLite database (with SQLite Viewer)
+   - Cmd/Ctrl + Shift + D: Debug view
 
 Happy coding! 🎉
 "
