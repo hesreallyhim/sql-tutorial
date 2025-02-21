@@ -83,6 +83,7 @@ echo "📦 Installing development tools..."
 code --install-extension eamodio.gitlens
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension bierner.markdown-mermaid
 code --install-extension christian-kohler.path-intellisense
 code --install-extension formulahendry.code-runner
 
