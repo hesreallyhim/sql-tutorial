@@ -1,6 +1,6 @@
 # SQL Learning Project
 
-A hands-on project to learn SQL using Python, Jupyter notebooks, and SQLite.
+A hands-on project to learn SQL using Python, Jupyter notebooks, and DuckDB.
 
 ## Setup
 
@@ -15,7 +15,7 @@ chmod +x setup.sh
 
 2. Run the setup script:
 ```bash
-./setup.sh
+./v2/setup.sh
 ```
 
 This will:
@@ -34,17 +34,17 @@ source venv/bin/activate
 
 2. Install the requirements:
 ```bash
-pip install -r requirements.txt
+pip install -r ./v2/requirements.txt
 ```
 
 3. Run the setup notebook:
 ```bash
-jupyter notebook notebooks/00_setup_database.ipynb
+jupyter notebook ./v2/notebooks/00_setup_database.ipynb
 ```
 
 ## Project Structure
 
-- `data/` - Contains the SQLite database
+- `data/` - Contains the DuckDB database
 - `notebooks/` - Jupyter notebooks with SQL tutorials
   - `00_setup_database.ipynb` - Creates and populates the database
   - `01_basic_queries.ipynb` - Learn basic SQL queries
@@ -53,4 +53,4 @@ jupyter notebook notebooks/00_setup_database.ipynb
 ## Requirements
 
 - Python >= 3.7
-- See requirements.txt for full dependencies
+- See [requirements.txt](./v2/requirements.txt) for full dependencies

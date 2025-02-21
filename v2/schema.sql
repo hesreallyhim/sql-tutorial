@@ -1,4 +1,4 @@
--- Entertainment Database Schema for DuckDB
+-- Movie Database Schema for DuckDB
 -- Version 2.0
 
 -- Movies table

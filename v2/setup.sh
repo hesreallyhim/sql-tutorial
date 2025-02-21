@@ -23,7 +23,7 @@ pip install --upgrade pip
 
 # Install project requirements
 echo "📚 Installing project dependencies..."
-pip install -r requirements.txt
+pip install -r v2/requirements.txt
 
 # Create .gitignore if it doesn't exist
 if [ ! -f ".gitignore" ]; then
@@ -104,7 +104,7 @@ if [ ! -d ".vscode" ]; then
         {
             "name": "DuckDB Database",
             "driver": "DuckDB",
-            "database": "./data/movies.duckdb"
+            "database": "./v2/data/movies.duckdb"
         }
     ],
     "code-runner.executorMap": {
@@ -133,7 +133,7 @@ To start using the project:
    - Code runner
 
 3. Start with the first notebook:
-   code notebooks/00_setup_database.ipynb
+   code ./v2/notebooks/00_setup_database.ipynb
 
 4. Helpful keyboard shortcuts:
    - Cmd/Ctrl + Shift + P: Command palette
