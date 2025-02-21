@@ -1,0 +1,97 @@
+```mermaid
+erDiagram
+    movies {
+        integer movie_id PK
+        varchar title
+        integer release_year
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    genres {
+        integer genre_id PK
+        varchar name
+        timestamp created_at
+    }
+    
+    movie_genres {
+        integer movie_id PK,FK
+        integer genre_id PK,FK
+        timestamp created_at
+    }
+    
+    actors {
+        integer actor_id PK
+        varchar name
+        integer birth_year
+        text bio
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    movie_actors {
+        integer movie_id PK,FK
+        integer actor_id PK,FK
+        varchar role_name
+        timestamp created_at
+    }
+    
+    nationalities {
+        integer nationality_id PK
+        varchar name
+        timestamp created_at
+    }
+    
+    directors {
+        integer director_id PK
+        varchar name
+        text bio
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    director_nationalities {
+        integer director_id PK,FK 
+        integer nationality_id PK,FK
+        timestamp created_at
+    }
+    
+    movie_directors {
+        integer movie_id PK,FK
+        integer director_id PK,FK
+        timestamp created_at
+    }
+    
+    users {
+        integer user_id PK
+        varchar username
+        varchar email
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    reviews {
+        integer review_id PK
+        integer user_id FK
+        integer movie_id FK
+        integer rating
+        text review_text
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    movies ||--o{ movie_genres : has
+    genres ||--o{ movie_genres : categorizes
+    
+    movies ||--o{ movie_actors : features
+    actors ||--o{ movie_actors : appears_in
+    
+    movies ||--o{ movie_directors : directed_by
+    directors ||--o{ movie_directors : directs
+    
+    directors ||--o{ director_nationalities : has
+    nationalities ||--o{ director_nationalities : belongs_to
+    
+    movies ||--o{ reviews : receives
+    users ||--o{ reviews : writes
+```
